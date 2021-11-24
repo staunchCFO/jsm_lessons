@@ -44,3 +44,29 @@ squareNumber(56);
  * 
  * In the case where we have multiple retun statments, it returns the first statement in the block.
  */
+
+
+
+/**
+ * Scopes in Function
+ * 
+ * *********Types of Scope***********
+ * - Globl Scope
+ * - Local || Function Scope
+ * - Block Scope
+ * 
+ * Consider the following example below
+ */
+
+const name = "Preshy"
+const age = 24
+const city = Festac
+
+function getPersonalInfo() {
+    const name = "Preshy"
+    const age  = 24
+
+    return `${name} is ${age}, and lives in the city of ${city}`
+}
+
+console.log(getPersonalInfo());
