@@ -58,15 +58,103 @@ squareNumber(56);
  * Consider the following example below
  */
 
+
+//Example of a variable declared in the Global Scope, it can be accessed anywhere in the code....
 const name = "Preshy"
 const age = 24
 const city = Festac
 
 function getPersonalInfo() {
-    const name = "Preshy"
-    const age  = 24
 
     return `${name} is ${age}, and lives in the city of ${city}`
 }
 
 console.log(getPersonalInfo());
+
+//Example of a variable declared in the Local Scope, it can be accessed only in the scope which it is declared....
+function getPersonalInfo() {
+    const myName = "Emeka";
+    const myAge = 27;
+    const myCity = "Lagos";
+
+    return `${myName} is ${myAge}, and lives in the city of ${myCity}`
+}
+
+//Example of a variable declared in it's block Scope, it can be accessed in the scope it's declared....
+if(true) {
+    let hisScore = 1078;
+
+    console.log(hisScore);
+}
+
+
+//****************************Hoisting******************************/
+/**
+ * Hositing is a method of calling a function or using a variable before they are being declared.
+ * 
+ * In the example below, the method of hoisting was practiced, in this case, a function was invoked before
+ * it was actually declared. This would only work as in the case of the older javascript method and 
+ * not with an arrow function, sice arrow fuction is modern javascript
+ */
+
+testingHoisting();
+
+function testingHoisting() {
+
+    const greetUser = "Hello User!!"
+
+    console.log(greetUser);
+}
+
+/*
+    The example below will log uncaught reference, as hoisting is not supported in modern javascript
+*/
+testingArrowHoisting();
+
+const testingArrowHoisting = () => {
+
+    const greetUser = "Hello User!! "
+
+    console.log(greetUser);
+}
+
+/**
+ * This also applies to var which is an older javascript variable declaration method and the let & const.
+ * 
+ * The example below will log undefined, as this is the rule that applies to hoisting in this var, only 
+ * the variable declaration var varHoisting; will be hoisted and not it's value.
+ * 
+ * But in the case of let and const, you get a refernece error.
+ */
+
+console.log(varHoisting)
+
+var varHoisting = 'Hoisted using the var keyword'
+
+
+//******************Closure************************/
+const outterFunction = () => {
+
+    const myFirstName = "Emeka";
+
+    const innerFunction = () => {
+
+        const myLastName = "Okezie";
+
+        console.log(myFirstName, myLastName);
+    }
+
+    return innerFunction;
+}
+
+const innerFunctionX = outterFunction();
+
+innerFunctionX();
+
+/**
+ * In the above example, we defined a Closure, which in this case is the process of declaring a function
+ * in a parent function. It also gives access to the outter functions scope.
+ * 
+ * Using the illustration from the global scope and local scope, myFistName is in a global scope to the
+ * innerFunction(); hence it's value is accessible to this function scope.
+ *  */
