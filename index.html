@@ -7,31 +7,32 @@
     <title>JSMastery Pro Course</title>
 </head>
 <body>
-    <h1>Learning JavaScript</h1> 
+    <h1>Learning JavaScript</h1>
+    
+    <p>Please rate the service:</p>
+    <p>
+        <input type="radio" name="rate" value="Very poor"> Very poor
+        <input type="radio" name="rate" value="Poor"> Poor
+        <input type="radio" name="rate" value="OK"> OK
+        <input type="radio" name="rate" value="Good"> Good
+        <input type="radio" name="rate" value="Very Good"> Very Good
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+
 
     <script>
-        let shoppingCart = [{
-            product: 'phone',
-            qty: 1,
-            price: 699
-        },
-        {
-            product: 'Screen Protector',
-            qty: 1,
-            price: 9.98
-        },
-        {
-            product: 'Memory Card',
-            qty: 2,
-            price: 20.99
-        }
-        ];
+        let btn = document.getElementById('btnRate');
 
-        const reduceShoppingCart = shoppingCart.reduce((a, b) => {
-            return a + b.qty * b.price
-        }, 0);
-
-        console.log(reduceShoppingCart);
+        btn.addEventListener('click', () => {
+            let rates = document.getElementsByName('rate');
+            rates.forEach((rate) => {
+                if (rate.checked) {
+                    alert(`You rated: ${rate.value}`);
+                }
+            })
+        });
     </script>
 </body>
 </html>
