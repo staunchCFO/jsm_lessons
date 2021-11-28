@@ -141,3 +141,32 @@ Output
 acc:  5 curr: 1
 6`
 //- In this example, acc is 5 and curr is 4 at the first time the callback() function is executed.
+
+
+
+
+
+
+
+let shoppingCart = [{
+    product: 'phone',
+    qty: 1,
+    price: 699
+},
+{
+    product: 'Screen Protector',
+    qty: 1,
+    price: 9.98
+},
+{
+    product: 'Memory Card',
+    qty: 2,
+    price: 20.99
+}
+];
+
+const reduceShoppingCart = shoppingCart.reduce((a, b) => {
+    return a + b.qty * b.price
+}, 0);
+
+console.log(reduceShoppingCart);

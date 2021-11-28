@@ -117,4 +117,54 @@ Then, define the range object with two properties lower and upper.
 After that, call the filter() methods of the data array and pass in the isInRange() function and the range object. 
 Because we pass in the range object, inside the isInRange() function, the this keyword references to the range object.
 Finally, show the result array in the web console.
- */
+*/
+
+
+/** 
+ * The filter method doesn't change the current array, rather these changes
+ * are added to the new array created.
+*/
+
+
+const numbers = [-10, 0, -2, 15, -36, 25]
+
+const filterOutput = numbers.filter((a) => {
+    return a >= 0
+})
+
+console.log(filterOutput)
+
+//Filtering using a For Loop;
+
+const positiveNumbers = [];
+
+for(i = 0; i < numbers.length; i++){
+    if(numbers >= 0){
+        positiveNumbers.push(numbers[i])
+    }else {
+        console.log("These are negative numbers")
+    }
+}
+
+
+//Another Example;
+let employeesData = [
+	{
+    	name: "Sebastian",
+    	overtime: 5
+	},
+	{
+    	name: "Cardi Vee",
+    	overtime: 10
+	},
+	{
+    	name: "George Lopez",
+    	overtime: 12
+	}
+];
+
+const filteredEmployees = employeesData.filter((b) => {
+    if(b.overtime >= 7) {
+        return true
+    }
+});

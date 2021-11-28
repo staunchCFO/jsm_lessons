@@ -75,3 +75,8 @@ let filteredNumbers = numbers.map(function(num, index) {
 // filteredNumbers is [1, 2, 3, undefined]
 // numbers is still [1, 2, 3, 4]
 
+
+
+
+
+

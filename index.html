@@ -9,6 +9,29 @@
 <body>
     <h1>Learning JavaScript</h1> 
 
-    <script src="script.js"></script>
+    <script>
+        let shoppingCart = [{
+            product: 'phone',
+            qty: 1,
+            price: 699
+        },
+        {
+            product: 'Screen Protector',
+            qty: 1,
+            price: 9.98
+        },
+        {
+            product: 'Memory Card',
+            qty: 2,
+            price: 20.99
+        }
+        ];
+
+        const reduceShoppingCart = shoppingCart.reduce((a, b) => {
+            return a + b.qty * b.price
+        }, 0);
+
+        console.log(reduceShoppingCart);
+    </script>
 </body>
 </html>
