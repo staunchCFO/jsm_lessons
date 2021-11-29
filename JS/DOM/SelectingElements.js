@@ -135,3 +135,68 @@ let btn = document.getElementById('btnCount');
  * This method is used in selecting elements by their class name.
  */
 
+
+{/* <div id="app">
+    <header>
+        <nav>
+            <ul id="menu">
+                <li class="item">HTML</li>
+                <li class="item">CSS</li>
+                <li class="item highlight">JavaScript</li>
+                <li class="item">TypeScript</li>
+            </ul>
+        </nav>
+        <h1>getElementsByClassName Demo</h1>
+    </header>
+     <section>
+        <article>
+            <h2 class="heading-secondary">Example 1</h2>
+        </article>
+        <article>
+            <h2 class="heading-secondary">Example 2</h2>
+        </article>
+    </section>
+</div> */}
+
+
+let menu = document.getElementById('#menu');
+let items = menu.getElementsByClassName('item');
+
+let data = [].map.call(items, item => item.textContent);
+
+console.log(data);
+
+
+
+/**
+ * @params querySelector() and querySelectorAll()
+ * 
+ * The querySelector() is a method of the Element interface. The querySelector() 
+ * allows you to find the first element that matches one or more CSS selectors.
+ */
+
+let element = parentNode.querySelector(selector);
+
+// Besides the querySelector(), you can use the querySelectorAll() 
+// method to find all elements that match a CSS selector or a group of CSS selector:
+
+let nodeList = Array.from(document.querySelectorAll(selector));
+
+//Using the querySelector and querySelectorAll Css selectors
+
+let note = document.querySelector('.menu-item');
+let notes = document.querySelectorAll('.menu-item');
+
+let logo = document.querySelector('#logo');
+let notes = document.querySelectorAll('#logo');
+
+
+
+
+
+
+// Summary
+
+// The querySelector() finds the first element that matches a CSS selector or a group of CSS selectors.
+// The querySelectorAll() finds all elements that match a CSS selector or a group of CSS selectors.
+// A CSS selector defines elements to which a CSS rule applies.
